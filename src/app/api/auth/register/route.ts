@@ -5,7 +5,7 @@ import { connectDB } from "@/app/lib/db"; // Connessione al DB
 export async function POST(req: Request) {
   let connection;
   try {
-    const { email, name, surname, username, password} = await req.json();
+    const { email, name, surname, username, password } = await req.json();
 
     if (!email || !name || !surname || !username || !password) {
       return NextResponse.json({ error: "⚠️ Tutti i campi sono obbligatori!" }, { status: 400 });
