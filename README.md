@@ -41,6 +41,12 @@ yarn install
 pnpm install
 ```
 ### 3️⃣ **Avvia il Sistema**
-
+```bash
+npm run start (Consigliato)
+# o
+yart start
+# o
+pnpm start
+```
 Dopo aver avviato il sistema apparirà un caricamento e il setup! dopo aver settato il sistema partirà automaticamente!
 
