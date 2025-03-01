@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 NexLicense - Sistema di Gestione Licenze  
 
-## Getting Started
+NexLicense è un sistema avanzato per la gestione delle licenze software, progettato per offrire un controllo sicuro e centralizzato delle licenze con un'interfaccia moderna e intuitiva.  
 
-First, run the development server:
+## 🛠️ Funzionalità  
+
+✅ **Gestione Licenze**: Crea, visualizza ed elimina licenze dalla dashboard.  
+✅ **Gestione Utenti**: Aggiungi e rimuovi account amministratori.  
+✅ **Impostazioni Avanzate**: Configura lingua, aggiornamenti e preferenze.  
+✅ **Sicurezza**: Autenticazione protetta e gestione sicura delle licenze.  
+✅ **Sistema di Setup**: Configurazione automatica del database e account admin.  
+✅ **Interfaccia Moderna**: Animazioni fluide e design accattivante.  
+✅ **Riavvio Diretto**: Possibilità di riavviare il sistema dalla dashboard.  
+
+---
+
+## 📌 Requisiti  
+
+- **Node.js 18+**  
+- **NPM / Yarn / PNPM**  
+- **Server MySQL** (il database viene configurato automaticamente)  
+
+---
+
+## 🏗️ Installazione  
+
+### 1️⃣ **Clona il repository**  
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/tuo-username/NexLicense.git
+cd NexLicense
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ **Installa le dipendenze**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+# o
+yarn install
+# o
+pnpm install
+```
+### 3️⃣ **Avvia il Sistema**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Dopo aver avviato il sistema apparirà un caricamento e il setup! dopo aver settato il sistema partirà automaticamente!
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
