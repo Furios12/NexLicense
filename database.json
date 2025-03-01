@@ -1,0 +1,6 @@
+{
+  "host": "localhost",
+  "user": "nex",
+  "password": "test",
+  "database": "nextest"
+}
