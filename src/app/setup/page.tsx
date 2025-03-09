@@ -8,7 +8,7 @@ export default function Setup() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
-      <h1 className="text-3xl font-bold mb-6">NexLicense - Setup</h1>
+      <h1 className="text-3xl font-bold mb-6">NexLicense Beta - Setup</h1>
       {step === 1 ? (
         <FormDatabase onNext={() => setStep(2)} />
       ) : (
