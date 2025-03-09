@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="flex items-center justify-center space-x-2">
                 <span className="text-2xl">🚀</span>
                 <span className="font-semibold">
-                  Una nuova versione di NexLicense Beta ({latestVersion}) è disponibile!
+                  Una nuova versione di NexLicense ({latestVersion}) è disponibile!
                 </span>
                 <button
                   className="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-transform transform hover:scale-105"

@@ -15,7 +15,7 @@ export default function Info() {
       </p>
       <h2 className="text-2xl font-bold mb-4">Come Funziona il Sistema di Licenze</h2>
       <p>
-        Il sistema di licenze NexLicense Beta consente di:
+        Il sistema di licenze NexLicense consente di:
       </p>
       <ul className="list-disc list-inside mb-4">
         <li>Creare nuove licenze per gli utenti.</li>
