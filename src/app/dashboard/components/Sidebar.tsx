@@ -7,7 +7,6 @@ const menuItems = [
   { id: "settings", label: "Impostazioni", icon: "⚙️" },
   { id: "accounts", label: "Accounts", icon: "👤" },
   { id: "Profilo", label: "Profilo", icon: "👤" },
-  { id: "restart", label: "Riavvia", icon: "🔄" },
 ];
 
 export default function Sidebar({ setSection }: { setSection: (id: string) => void }) {

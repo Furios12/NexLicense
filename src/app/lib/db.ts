@@ -55,7 +55,18 @@ async function setupDatabase(connection: mysql.Connection) {
       )
     `);
 
-    console.log("✅ Tabella 'accounts' verificata/creata con successo!");
+    await connection.execute(`
+      CREATE TABLE IF NOT EXISTS licenses (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        user VARCHAR(255) NOT NULL,
+        type VARCHAR(255) NOT NULL,
+        expiration DATE NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+    
+
+    console.log("✅ Database pronto!");
 
   } catch (error) {
     console.error("❌ Errore nel setup del database:", error);

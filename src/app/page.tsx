@@ -81,7 +81,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl font-semibold mb-4">🛠️ NexLicense è in avvio...</h2>
+            <h2 className="text-3xl font-semibold mb-4">🛠️ NexLicense è in caricamento...</h2>
             <p className="text-gray-300 mb-4">Attendi mentre il sistema si prepara...</p>
 
             {/* Contenitore della barra di progresso */}

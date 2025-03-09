@@ -5,7 +5,6 @@ import Sidebar from "./components/Sidebar";
 import Licenses from "./components/Licenses";
 import Settings from "./components/Settings";
 import Accounts from "./components/Accounts";
-import Restart from "./components/Restart";
 
 export default function Dashboard() {
   const [section, setSection] = useState("licenses");
@@ -47,7 +46,6 @@ export default function Dashboard() {
         {section === "licenses" && <Licenses />}
         {section === "settings" && <Settings />}
         {section === "accounts" && <Accounts />}
-        {section === "restart" && <Restart />}
 
 
     
