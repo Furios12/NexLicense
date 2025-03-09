@@ -8,6 +8,7 @@ export const UpdateProvider = ({ children }) => {
   useEffect(() => {
     const checkForUpdates = async () => {
       try {
+        console.log("Controllo aggiornamenti disponibili...");
         const response = await fetch('/api/check-update');
         const data = await response.json();
 
