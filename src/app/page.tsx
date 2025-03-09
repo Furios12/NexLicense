@@ -80,7 +80,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl font-semibold mb-4">🛠️ NexLicense è in caricamento...</h2>
+            <h2 className="text-3xl font-semibold mb-4">🛠️ NexLicense Beta è in caricamento...</h2>
             <p className="text-gray-300 mb-4">Attendi mentre il sistema si prepara...</p>
 
             <div className="w-full bg-gray-700 rounded-full h-2 relative overflow-hidden">
@@ -101,7 +101,7 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl font-bold mb-4">Benvenuto in NexLicense</h1>
+            <h1 className="text-4xl font-bold mb-4">Benvenuto in NexLicense Beta</h1>
             <p className="mb-6 text-gray-300">Configuriamo il tuo sistema di licenze!</p>
             
             <motion.button
