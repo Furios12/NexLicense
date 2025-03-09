@@ -40,11 +40,21 @@ yarn install
 # o
 pnpm install
 ```
-### 3️⃣ **Avvia il Sistema**
+
+### 3️⃣ **Configura la JWT Secret**
+
+Apri il file `.env` e modifica la chiave `JWT_SECRET` con una chiave sicura e complessa. Puoi generare una chiave utilizzando un generatore di chiavi sicure online.
+
+```properties
+JWT_SECRET=la-tua-chiave-segreta-sicura
+Cambia anche la key di emergenza nella api: (1. src/app/api/auth/login/route.ts:26 2. src/app/api/auth/user/route.ts:11)
+```
+
+### 4️⃣ **Avvia il Sistema**
 ```bash
 npm run start (Consigliato)
 # o
-yart start
+yarn start
 # o
 pnpm start
 ```

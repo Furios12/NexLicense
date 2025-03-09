@@ -14,13 +14,25 @@ export async function POST(req: Request) {
     const hashedPassword = await bcrypt.hash(password, 10);
     connection = await connectDB();
 
-    const [existingUsers] = await connection.execute(
-      "SELECT id FROM accounts WHERE email = ? OR username = ?",
-      [email, username]
+    const [existingUsers]: any[] = await connection.execute(
+      "SELECT id FROM accounts WHERE email = ? OR username = ? OR name = ? OR surname = ?",
+      [email, username, name, surname]
     );
 
     if ((existingUsers as any[]).length > 0) {
-      return NextResponse.json({ error: "⚠️ Email o Username già in uso!" }, { status: 409 });
+      const existingUser = existingUsers[0];
+      if (existingUser.email === email) {
+        return NextResponse.json({ error: "⚠️ Email già in uso!" }, { status: 409 });
+      }
+      if (existingUser.username === username) {
+        return NextResponse.json({ error: "⚠️ Username già in uso!" }, { status: 409 });
+      }
+      if (existingUser.name === name) {
+        return NextResponse.json({ error: "⚠️ Nome già in uso!" }, { status: 409 });
+      }
+      if (existingUser.surname === surname) {
+        return NextResponse.json({ error: "⚠️ Cognome già in uso!" }, { status: 409 });
+      }
     }
 
     await connection.execute(

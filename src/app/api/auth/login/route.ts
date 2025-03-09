@@ -23,7 +23,7 @@ export async function POST(req: Request) {
 
     const token = sign(
       { id: user.id, username: user.username },
-      process.env.JWT_SECRET || "supersegreto",
+      process.env.JWT_SECRET || "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p7q8r9s0t", //chiave di emergenza (cambiala come vuoi tu)
       { expiresIn: "1h" }
     );
 
