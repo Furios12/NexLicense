@@ -1,14 +1,13 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const currentVersion = "0.1"; // Modifica con la tua versione attuale
-  const repoUrl = "https://api.github.com/repos/Furios12/NexLicense/releases/latest"; // URL per ottenere l'ultima release
+  const currentVersion = "0.1";
+  const repoUrl = "https://api.github.com/repos/Furios12/NexLicense/releases/latest";
 
   try {
     const res = await fetch(repoUrl);
     const data = await res.json();
-    const latestVersion = data.tag_name; // La versione più recente disponibile
-    console.log('Sto Eseguendo il controllo...')
+    const latestVersion = data.tag_name;
 
     if (currentVersion !== latestVersion) {
       return NextResponse.json({ updateAvailable: true, latestVersion });

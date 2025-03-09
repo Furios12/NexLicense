@@ -13,7 +13,6 @@ export function DatabaseProvider({ children }: { children: ReactNode }) {
     password: "",
   });
 
-  // ✅ Carica i dati dal file JSON all'avvio
   useEffect(() => {
     fetch("/api/database")
       .then((res) => res.json())
@@ -24,7 +23,6 @@ export function DatabaseProvider({ children }: { children: ReactNode }) {
       });
   }, []);
 
-  // ✅ Salva i dati nel file quando cambia lo stato
   const saveConfig = async (config: { host: string; name: string; password: string }) => {
     setDbConfig(config);
     await fetch("/api/database", {

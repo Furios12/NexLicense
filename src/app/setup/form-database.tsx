@@ -10,7 +10,6 @@ export default function FormDatabase({ onNext }: { onNext: () => void }) {
     database: "",
   });
 
-  // Funzione per salvare i dati in database.json
   const saveDatabaseConfig = async () => {
     try {
       const response = await fetch("/api/save-db", {

@@ -1,14 +1,11 @@
 import { createContext, useState, useContext, useEffect } from 'react';
 
-// Contesto per l'aggiornamento
 const UpdateContext = createContext();
 
-// Provider per fornire lo stato globale sull'aggiornamento
 export const UpdateProvider = ({ children }) => {
   const [updateInfo, setUpdateInfo] = useState(null);
 
   useEffect(() => {
-    // Funzione per verificare gli aggiornamenti
     const checkForUpdates = async () => {
       try {
         const response = await fetch('/api/check-update');
@@ -32,5 +29,4 @@ export const UpdateProvider = ({ children }) => {
   );
 };
 
-// Hook personalizzato per ottenere i dati di aggiornamento
 export const useUpdate = () => useContext(UpdateContext);

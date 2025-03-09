@@ -27,7 +27,7 @@ NexLicense è un sistema avanzato per la gestione delle licenze software, proget
 ### 1️⃣ **Clona il repository**  
 
 ```bash
-git clone https://github.com/tuo-username/NexLicense.git
+git clone https://github.com/Furios12/NexLicense.git
 cd NexLicense
 ```
 

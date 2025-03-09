@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Licenses from "./components/Licenses";
 import Settings from "./components/Settings";
 import Accounts from "./components/Accounts";
+import Info from "./components/info";
 
 export default function Dashboard() {
   const [section, setSection] = useState("licenses");
@@ -16,7 +17,7 @@ export default function Dashboard() {
       try {
         const res = await fetch("/api/auth/user", { credentials: "include" });
         if (!res.ok) {
-          router.push("/login"); // Se non autenticato, reindirizza
+          router.push("/login"); 
           return;
         }
         const data = await res.json();
@@ -31,7 +32,11 @@ export default function Dashboard() {
   }, [router]);
 
   if (!user) {
-    return <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">🔄 Caricamento...</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+        <div className="loader"></div>
+      </div>
+    );
   }
 
   async function handleLogout() {
@@ -46,10 +51,8 @@ export default function Dashboard() {
         {section === "licenses" && <Licenses />}
         {section === "settings" && <Settings />}
         {section === "accounts" && <Accounts />}
-
-
-    
-        </div>
+        {section === "Info" && <Info />}
       </div>
+    </div>
   );
 }

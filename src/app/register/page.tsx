@@ -11,7 +11,7 @@ export default function Register() {
     surname: "",
     username: "",
     password: "",
-    adminPin: "", // Aggiungi il campo per il pin
+    adminPin: "",
   });
   const [error, setError] = useState("");
   const router = useRouter();
@@ -20,7 +20,6 @@ export default function Register() {
     e.preventDefault();
     setError("");
 
-    // Verifica il pin dell'admin
     const responsePin = await fetch("/api/verificapin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -33,7 +32,6 @@ export default function Register() {
       return;
     }
 
-    // Procedi con la registrazione se il pin è valido
     const response = await fetch("/api/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -59,7 +57,6 @@ export default function Register() {
         background: "linear-gradient(135deg, #0f172a, #1e293b, #334155)",
       }}
     >
-      {/* LOGO */}
       <motion.div
         initial={{ opacity: 0, y: -20, scale: 0.8 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -75,7 +72,6 @@ export default function Register() {
         />
       </motion.div>
 
-      {/* CARD REGISTRAZIONE */}
       <motion.div
         className="bg-gray-900 p-8 rounded-2xl shadow-2xl w-full max-w-md border border-gray-700"
         initial={{ y: -30, opacity: 0 }}
@@ -140,7 +136,6 @@ export default function Register() {
             onChange={(e) => setAccountInfo({ ...accountInfo, adminPin: e.target.value })}
           />
 
-          {/* PULSANTE */}
           <motion.button
             type="submit"
             className="w-full bg-green-500 hover:bg-green-600 transition-all p-3 rounded-xl text-lg font-semibold shadow-md text-white relative overflow-hidden"

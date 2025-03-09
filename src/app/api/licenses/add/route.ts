@@ -1,15 +1,11 @@
 import { NextResponse } from "next/server";
-import { connectDB } from "../../../lib/db"; // Importa la funzione di connessione
+import { connectDB } from "../../../lib/db";
 
 export async function POST(request: Request) {
-  // Estrai i dati della licenza dal body della richiesta
   const { user, type, expiration } = await request.json();
-
-  // Ottieni la connessione al database
   const connection = await connectDB();
 
   try {
-    // Esegui l'inserimento della nuova licenza
     const query = 'INSERT INTO licenses (user, type, expiration) VALUES (?, ?, ?)';
     await connection.execute(query, [user, type, expiration]);
 

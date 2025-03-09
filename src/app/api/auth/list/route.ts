@@ -7,7 +7,6 @@ export async function GET(req: Request) {
   try {
     connection = await connectDB();
 
-    // Recupera la lista degli account dal database
     const [rows]: any = await connection.execute('SELECT * FROM accounts');
     
     return NextResponse.json(rows);

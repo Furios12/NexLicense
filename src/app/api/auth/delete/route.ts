@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { connectDB } from "@/app/lib/db"; // Connessione al DB
+import { connectDB } from "@/app/lib/db";
 
 export async function DELETE(req: Request) {
   let connection;
@@ -10,10 +10,8 @@ export async function DELETE(req: Request) {
       return NextResponse.json({ error: "⚠️ ID account obbligatorio!" }, { status: 400 });
     }
 
-    // Connessione al database
     connection = await connectDB();
 
-    // Controlla se l'account esiste
     const [existingAccount] = await connection.execute(
       "SELECT id FROM accounts WHERE id = ?",
       [id]
@@ -23,7 +21,6 @@ export async function DELETE(req: Request) {
       return NextResponse.json({ error: "⚠️ Account non trovato!" }, { status: 404 });
     }
 
-    // Query per eliminare l'account
     await connection.execute(
       "DELETE FROM accounts WHERE id = ?",
       [id]
@@ -36,6 +33,6 @@ export async function DELETE(req: Request) {
     return NextResponse.json({ error: "Errore interno del server" }, { status: 500 });
 
   } finally {
-    if (connection) await connection.end(); // Chiudiamo la connessione
+    if (connection) await connection.end();
   }
 }

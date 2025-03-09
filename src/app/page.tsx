@@ -19,7 +19,7 @@ export default function Home() {
           setLoading(false);
           return 100;
         }
-        return oldProgress + 10; // Incremento ogni secondo
+        return oldProgress + 10;
       });
     }, 1000);
 
@@ -58,7 +58,6 @@ export default function Home() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* LOGO ANIMATO */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -84,7 +83,6 @@ export default function Home() {
             <h2 className="text-3xl font-semibold mb-4">🛠️ NexLicense è in caricamento...</h2>
             <p className="text-gray-300 mb-4">Attendi mentre il sistema si prepara...</p>
 
-            {/* Contenitore della barra di progresso */}
             <div className="w-full bg-gray-700 rounded-full h-2 relative overflow-hidden">
               <motion.div
                 className="h-full bg-blue-500 rounded-full"

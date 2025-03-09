@@ -4,7 +4,7 @@ import path from "path";
 
 const filePath = path.join(process.cwd(), "database.json");
 
-// Funzione per leggere la configurazione del database
+
 async function getDbConfig() {
   try {
     const data = await fs.readFile(filePath, "utf-8");
@@ -14,7 +14,6 @@ async function getDbConfig() {
   }
 }
 
-// Funzione per connettersi e configurare il database
 export async function connectDB() {
   const config = await getDbConfig();
 
@@ -28,7 +27,7 @@ export async function connectDB() {
 
     console.log("✅ Connessione al database riuscita!");
 
-    // Setup automatico del database
+
     await setupDatabase(connection);
 
     return connection;
@@ -38,10 +37,10 @@ export async function connectDB() {
   }
 }
 
-// Funzione per creare le tabelle necessarie
+
 async function setupDatabase(connection: mysql.Connection) {
   try {
-    console.log("🔄 Verifica e creazione delle tabelle...");
+    console.log("🔄 Sto verificando/creando il database....");
 
     await connection.execute(`
       CREATE TABLE IF NOT EXISTS accounts (

@@ -8,7 +8,6 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "Non autenticato" }, { status: 401 });
     }
 
-    // Verifica il token
     const user = verify(token, process.env.JWT_SECRET || "supersegreto");
     return NextResponse.json({ user });
 

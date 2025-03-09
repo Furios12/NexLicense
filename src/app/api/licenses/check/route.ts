@@ -1,20 +1,16 @@
 import { NextResponse } from "next/server";
-import { connectDB } from "../../../lib/db"; // Importa la funzione di connessione
+import { connectDB } from "../../../lib/db";
 
 export async function POST(request: Request) {
-  // Estrai i dati della licenza dal body della richiesta
   const { id, user, expiration } = await request.json();
 
-  // Verifica che tutti i parametri siano presenti
   if (!id || !user || !expiration) {
     return NextResponse.json({ error: "⚠️ Tutti i campi sono obbligatori!" }, { status: 400 });
   }
 
-  // Ottieni la connessione al database
   const connection = await connectDB();
 
   try {
-    // Esegui la query per controllare se la licenza esiste
     const query = 'SELECT * FROM licenses WHERE id = ? AND user = ? AND expiration = ?';
     const [rows, fields]: [any[], any] = await connection.execute(query, [id, user, expiration]);
 

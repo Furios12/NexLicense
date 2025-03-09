@@ -6,7 +6,7 @@ const menuItems = [
   { id: "licenses", label: "Licenze", icon: "🔑" },
   { id: "settings", label: "Impostazioni", icon: "⚙️" },
   { id: "accounts", label: "Accounts", icon: "👤" },
-  { id: "Profilo", label: "Profilo", icon: "👤" },
+  { id: "Info", label: "Informazioni", icon: "ℹ️" },
 ];
 
 export default function Sidebar({ setSection }: { setSection: (id: string) => void }) {

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation"; // Importa useRouter per la navigazione
+import { useRouter } from "next/navigation";
 
 export default function FormAccount({ onNext }: { onNext: () => void }) {
   const [accountInfo, setAccountInfo] = useState({
@@ -12,8 +12,8 @@ export default function FormAccount({ onNext }: { onNext: () => void }) {
     password: "",
   });
 
-  const [isSetupComplete, setIsSetupComplete] = useState(false); // Stato per "Setup completato"
-  const router = useRouter(); // Hook per la navigazione
+  const [isSetupComplete, setIsSetupComplete] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,14 +26,14 @@ export default function FormAccount({ onNext }: { onNext: () => void }) {
 
     if (response.ok) {
       console.log("✅ Account salvato con successo!");
-      setIsSetupComplete(true); // Imposta lo stato di setup completato
+      setIsSetupComplete(true);
     } else {
       console.error("❌ Errore nel salvataggio dell'account!");
     }
   };
 
   const handleStartSystem = () => {
-    router.push("/login"); // Redirige alla pagina di login
+    router.push("/login");
   };
 
   return (
@@ -107,7 +107,6 @@ export default function FormAccount({ onNext }: { onNext: () => void }) {
           </motion.button>
         </>
       ) : (
-        // Se il setup è completo, mostra il messaggio e il pulsante
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

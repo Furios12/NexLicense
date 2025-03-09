@@ -1,7 +1,7 @@
-"use client"; // Aggiungi questa direttiva per renderlo un componente lato client
+"use client"; 
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // Usa next/navigation
+import { useRouter } from "next/navigation"; 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { DatabaseProvider } from "@/app/Config/database";
@@ -39,24 +39,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="it">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <DatabaseProvider>
-          {/* Avviso di aggiornamento */}
+          {/* agg */}
           {updateAvailable && (
-            <div className="bg-yellow-600 text-black p-4 fixed top-0 left-0 right-0 text-center z-50">
-              <p>
-                Una nuova versione di NexLicense ({latestVersion}) è disponibile!{" "}
+            <div className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 text-black p-4 fixed top-0 left-0 right-0 text-center z-50 shadow-lg animate-bounce">
+              <p className="flex items-center justify-center space-x-2">
+                <span className="text-2xl">🚀</span>
+                <span className="font-semibold">
+                  Una nuova versione di NexLicense ({latestVersion}) è disponibile!
+                </span>
                 <button
-                  className="underline"
+                  className="ml-4 px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-transform transform hover:scale-105"
                   onClick={() =>
                     router.push("https://github.com/Furios12/NexLicense/releases")
                   }
                 >
-                  Clicca qui per aggiornare
+                  Aggiorna Ora
                 </button>
               </p>
             </div>
           )}
 
-          {/* Contenuto principale */}
+          {/*  princ */}
           {children}
         </DatabaseProvider>
       </body>

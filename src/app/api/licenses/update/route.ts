@@ -2,13 +2,10 @@ import { NextResponse } from "next/server";
 import { connectDB } from "../../../lib/db";
 
 export async function PUT(request: Request) {
-  // Estrai i dati aggiornati dalla richiesta
   const { id, user, type, expiration } = await request.json();
-
   const connection = await connectDB();
 
   try {
-    // Esegui l'aggiornamento della licenza identificata da "id"
     const query = 'UPDATE licenses SET user = ?, type = ?, expiration = ? WHERE id = ?';
     await connection.execute(query, [user, type, expiration, id]);
 
