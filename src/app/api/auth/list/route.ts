@@ -1,4 +1,3 @@
-// /pages/api/auth/accounts/list.ts
 import { NextResponse } from 'next/server';
 import { connectDB } from '@/app/lib/db';
 

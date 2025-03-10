@@ -11,7 +11,7 @@ export default function Login() {
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    setError(""); // Reset errori
+    setError(""); 
 
     const response = await fetch("/api/auth/login", {
       method: "POST",
@@ -95,7 +95,7 @@ export default function Login() {
             onChange={(e) => setCredentials({ ...credentials, password: e.target.value })}
           />
 
-          {/* PULSANTE */}
+          {/* PULSANTE SEXY */}
           <motion.button
             type="submit"
             className="w-full bg-blue-500 hover:bg-blue-600 transition-all p-3 rounded-xl text-lg font-semibold shadow-md text-white relative overflow-hidden"
