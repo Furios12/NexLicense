@@ -4,7 +4,6 @@ import path from "path";
 
 const filePath = path.join(process.cwd(), "database.json");
 
-
 async function getDbConfig() {
   try {
     const data = await fs.readFile(filePath, "utf-8");
@@ -27,7 +26,6 @@ export async function connectDB() {
 
     console.log("✅ Connessione al database riuscita!");
 
-
     await setupDatabase(connection);
 
     return connection;
@@ -37,13 +35,12 @@ export async function connectDB() {
   }
 }
 
-
 async function setupDatabase(connection: mysql.Connection) {
   try {
-    console.log("🔄 Sto verificando/creando il database....");
+    console.log("🔄 Sto verificando/creando il database...");
 
-    await connection.execute(`
-      CREATE TABLE IF NOT EXISTS accounts (
+    const queries = [
+      `CREATE TABLE IF NOT EXISTS accounts (
         id INT AUTO_INCREMENT PRIMARY KEY,
         email VARCHAR(255) NOT NULL UNIQUE,
         name VARCHAR(255) NOT NULL,
@@ -51,22 +48,21 @@ async function setupDatabase(connection: mysql.Connection) {
         username VARCHAR(255) NOT NULL UNIQUE,
         password VARCHAR(255) NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
-
-    await connection.execute(`
-      CREATE TABLE IF NOT EXISTS licenses (
+      )`,
+      `CREATE TABLE IF NOT EXISTS licenses (
         id INT AUTO_INCREMENT PRIMARY KEY,
         user VARCHAR(255) NOT NULL,
         type VARCHAR(255) NOT NULL,
         expiration DATE NOT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-      )
-    `);
-    
+      )`
+    ];
+
+    for (const query of queries) {
+      await connection.execute(query);
+    }
 
     console.log("✅ Database pronto!");
-
   } catch (error) {
     console.error("❌ Errore nel setup del database:", error);
     throw error;

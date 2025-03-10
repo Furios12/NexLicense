@@ -41,13 +41,14 @@ yarn install
 pnpm install
 ```
 
-### 3️⃣ **Configura la JWT Secret**
+### 3️⃣ **Configura la JWT Secret e il pin admin**
 
 Apri il file `.env` e modifica la chiave `JWT_SECRET` con una chiave sicura e complessa. Puoi generare una chiave utilizzando un generatore di chiavi sicure online.
 
 ```properties
 JWT_SECRET=la-tua-chiave-segreta-sicura
 Cambia anche la key di emergenza nella api: (1. src/app/api/auth/login/route.ts:26 2. src/app/api/auth/user/route.ts:11)
+poi dopo vai dentro /data/AdminPin.json e cambia il pin admin(Serve per Creare gli account Admin)
 ```
 
 ### 4️⃣ **Avvia il Sistema**
