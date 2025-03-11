@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { label } from "framer-motion/client";
 
 const menuItems = [
   { id: "licenses", label: "Licenze", icon: "🔑" },
   { id: "settings", label: "Impostazioni", icon: "⚙️" },
   { id: "accounts", label: "Accounts", icon: "👤" },
   { id: "Info", label: "Informazioni", icon: "ℹ️" },
+  { id: "Bug", label: "Segnala un Bug", icon: "🐞" },
 ];
 
 export default function Sidebar({ setSection }: { setSection: (id: string) => void }) {

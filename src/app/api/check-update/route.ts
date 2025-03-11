@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export async function GET() {
-  const currentVersion = "0.1";
+  const currentVersion = "0.2";
   const repoUrl = "https://api.github.com/repos/Furios12/NexLicense/releases/latest";
   
 

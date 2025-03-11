@@ -6,6 +6,7 @@ import Licenses from "./components/Licenses";
 import Settings from "./components/Settings";
 import Accounts from "./components/Accounts";
 import Info from "./components/info";
+import BugReportModal from "./components/bug";
 
 export default function Dashboard() {
   const [section, setSection] = useState("licenses");
@@ -52,6 +53,7 @@ export default function Dashboard() {
         {section === "settings" && <Settings />}
         {section === "accounts" && <Accounts />}
         {section === "Info" && <Info />}
+        {section === "Bug" && <BugReportModal isOpen={true} onClose={() => setSection("licenses")} />}
       </div>
     </div>
   );
