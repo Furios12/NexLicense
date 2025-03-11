@@ -10,15 +10,13 @@ NexLicense è un sistema avanzato per la gestione delle licenze software, proget
 ✅ **Sicurezza**: Autenticazione protetta e gestione sicura delle licenze.  
 ✅ **Sistema di Setup**: Configurazione automatica del database e account admin.  
 ✅ **Interfaccia Moderna**: Animazioni fluide e design accattivante.  
-✅ **Riavvio Diretto**: Possibilità di riavviare il sistema dalla dashboard.  
-
 ---
 
 ## 📌 Requisiti  
 
 - **Node.js 18+**  
 - **NPM / Yarn / PNPM**  
-- **Server MySQL** (il database viene configurato automaticamente)  
+- **Server MySQL** (il database viene configurato automaticamente, Crea solo l'utente e il database! poi dopo le tabelle le crea il software)  
 
 ---
 
@@ -51,7 +49,18 @@ Cambia anche la key di emergenza nella api: (1. src/app/api/auth/login/route.ts:
 poi dopo vai dentro /data/AdminPin.json e cambia il pin admin(Serve per Creare gli account Admin)
 ```
 
-### 4️⃣ **Avvia il Sistema**
+### 4️⃣ **Esegui il build del sistema**
+
+```bash
+npm run build
+# o
+yarn build
+# o
+pnpm build
+```
+
+### 5️⃣ **Avvia il Sistema**
+
 ```bash
 npm run start (Consigliato)
 # o
@@ -59,5 +68,6 @@ yarn start
 # o
 pnpm start
 ```
+
 Dopo aver avviato il sistema apparirà un caricamento e il setup! dopo aver settato il sistema partirà automaticamente!
 
