@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { DatabaseProvider } from "@/app/Config/database";
 
 export const metadata: Metadata = {
-  title: "NexLicense",
+  title: "NexLicense Beta",
   description: "Sistema di gestione licenze",
 };
 

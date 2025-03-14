@@ -78,12 +78,14 @@ export default function Licenses() {
     <div className="p-4">
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6">
         <h2 className="text-3xl font-semibold text-white mb-4 sm:mb-0">Lista Licenze</h2>
-        <button
+        <motion.button
           onClick={() => setIsFormOpen(!isFormOpen)}
           className="bg-blue-600 hover:bg-blue-700 transition-transform transform hover:scale-110 text-white py-2 px-6 rounded shadow duration-300"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           {isFormOpen ? "Chiudi" : "Aggiungi Licenza"}
-        </button>
+        </motion.button>
       </div>
 
       {isFormOpen && (
@@ -133,26 +135,35 @@ export default function Licenses() {
               />
             </div>
             <div className="flex justify-end space-x-2">
-              <button
+              <motion.button
                 type="button"
                 onClick={() => setIsFormOpen(false)}
                 className="bg-gray-600 hover:bg-gray-500 transition-transform transform hover:scale-110 text-white py-2 px-4 rounded duration-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
               >
                 Annulla
-              </button>
-              <button
+              </motion.button>
+              <motion.button
                 type="submit"
                 disabled={isSubmitting}
                 className="bg-green-600 hover:bg-green-700 transition-transform transform hover:scale-110 text-white py-2 px-4 rounded duration-300"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
               >
                 {isSubmitting ? "Salvataggio..." : "Salva Licenza"}
-              </button>
+              </motion.button>
             </div>
           </form>
         </motion.div>
       )}
 
-      <div className="overflow-x-auto bg-gray-800 p-4 rounded-lg">
+      <motion.div
+        className="overflow-x-auto bg-gray-800 p-4 rounded-lg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-gray-700 text-gray-300">
@@ -165,21 +176,32 @@ export default function Licenses() {
           </thead>
           <tbody>
             {licenses.map((license) => (
-              <tr key={license.id} className="border border-gray-600 hover:bg-gray-700 transition">
+              <motion.tr
+                key={license.id}
+                className="border border-gray-600 hover:bg-gray-700 transition"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+              >
                 <td className="p-2">{license.id}</td>
                 <td className="p-2">{license.user}</td>
                 <td className="p-2">{license.type}</td>
                 <td className="p-2">{new Date(license.expiration).toLocaleDateString()}</td>
                 <td className="p-2">
-                  <button onClick={() => handleDelete(license.id)} className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded shadow-md transform transition-transform hover:scale-110">
+                  <motion.button
+                    onClick={() => handleDelete(license.id)}
+                    className="bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded shadow-md transform transition-transform hover:scale-110"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
                     Elimina
-                  </button>
+                  </motion.button>
                 </td>
-              </tr>
+              </motion.tr>
             ))}
           </tbody>
         </table>
-      </div>
+      </motion.div>
     </div>
   );
 }

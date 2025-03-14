@@ -16,7 +16,7 @@ export default function Sidebar({ setSection }: { setSection: (id: string) => vo
 
   return (
     <div className="w-64 bg-gray-800 h-screen p-5 text-white">
-      <div className="text-center text-2xl font-bold mb-6">NexLicense</div>
+      <div className="text-center text-2xl font-bold mb-6">NexLicense Beta</div>
       <ul>
         {menuItems.map((item) => (
           <motion.li
@@ -28,8 +28,10 @@ export default function Sidebar({ setSection }: { setSection: (id: string) => vo
               setActive(item.id);
               setSection(item.id);
             }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.05, opacity: 0.8 }}
+            whileTap={{ scale: 0.95, opacity: 1 }}
+            animate={{ color: active === item.id ? "#ffffff" : "#cccccc" }}
+            transition={{ duration: 0.3 }}
           >
             <span>{item.icon}</span> {item.label}
           </motion.li>
